@@ -15,8 +15,8 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import requests
 from os import getenv
-import Translator
 from pyrogram import Client, filters
+from googletrans import Translator
 
 bot = Client("Chatbot", 
                 bot_token=getenv("BOT_TOKEN"), 
