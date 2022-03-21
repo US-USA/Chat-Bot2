@@ -18,14 +18,12 @@ from os import getenv
 import Translator
 from pyrogram import Client, filters
 
-API_ID = environ.get('API_ID')
-API_HASH = environ.get('API_HASH')
-BOT_TOKEN = environ.get('BOT_TOKEN')
+bot = Client("Chatbot", 
+                bot_token=getenv("BOT_TOKEN"), 
+                api_id=getenv("API_ID"), 
+                api_hash=getenv("API_HASH"))
 
-bot = Client('droplink bot',
-             api_id=API_ID,
-             api_hash=API_HASH,
-             bot_token=BOT_TOKEN
+tr = Translator()
 
 
 @bot.on_message(filters.command("start"))
